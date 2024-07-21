@@ -13,12 +13,17 @@ import {
   Flex,
   IconButton,
   Input,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
   useDisclosure,
 } from '@chakra-ui/react';
 import { useRef } from 'react';
 import { BellIcon, HamburgerIcon } from '@chakra-ui/icons';
 
-export default function Header() {
+export default function LetterHeader() {
   const handleMenu = () => {
     console.log('menu');
   };
@@ -33,14 +38,16 @@ export default function Header() {
       alignItems={'center'}
       p={'2rem'}
     >
-      <IconButton
-        variant="none"
-        icon={<HamburgerIcon />}
-        onClick={handleMenu}
-        fontSize="1.5rem"
-      />
+      <Tabs variant="soft-rounded">
+        <TabList>
+          <Tab>ALL AI</Tab>
+
+          <Tab>HALF AI</Tab>
+          <Tab>CHECK AI</Tab>
+        </TabList>
+      </Tabs>
       <Box>진심이 로고</Box>
-      <IconButton icon={<BellIcon />} onClick={handleAlert} fontSize="1.5rem" />
+      <Box></Box>
     </Flex>
   );
 }

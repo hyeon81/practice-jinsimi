@@ -1,5 +1,11 @@
 import type { Metadata } from 'next';
-import { Box } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  ChakraProvider,
+  extendBaseTheme,
+  theme as chakraTheme,
+} from '@chakra-ui/react';
 
 export const metadata: Metadata = {
   title: '진심이',
@@ -14,7 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Box>{children}</Box>
+        <ChakraProvider>
+          <Center>
+            <Box h={'100%'} w={'100%'} maxWidth={'1280px'}>
+              {children}
+            </Box>
+          </Center>
+        </ChakraProvider>
       </body>
     </html>
   );
