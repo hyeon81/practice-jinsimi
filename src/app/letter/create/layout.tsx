@@ -1,11 +1,6 @@
 import { Box } from '@chakra-ui/react';
-import LetterHeader from '@/components/LetterHeader';
+import LetterHeader from '@/components/common/LetterHeader';
 
 export default function Layout({ children }) {
-  return (
-    <Box>
-      <LetterHeader />
-      <Box bg={'yellow'}>{children}</Box>
-    </Box>
-  );
+  return <Box bg={'yellow'}>{children}</Box>;
 }

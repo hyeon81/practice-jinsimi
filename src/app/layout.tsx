@@ -4,8 +4,10 @@ import {
   Center,
   ChakraProvider,
   extendBaseTheme,
+  Flex,
   theme as chakraTheme,
 } from '@chakra-ui/react';
+import Header from '@/components/common/Header';
 
 export const metadata: Metadata = {
   title: '진심이',
@@ -21,11 +23,14 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ChakraProvider>
-          <Center>
-            <Box h={'100%'} w={'100%'} maxWidth={'1280px'}>
-              {children}
-            </Box>
-          </Center>
+          <Flex flexDirection={'column'}>
+            <Header />
+            <Center>
+              <Box h={'100%'} w={'100%'} maxWidth={'1280px'} p={1}>
+                {children}
+              </Box>
+            </Center>
+          </Flex>
         </ChakraProvider>
       </body>
     </html>
